@@ -441,26 +441,45 @@ body {
   font-weight: 600;
 }
 
-.tryhackme-badge {
+.tryhackme-badge-container {
   margin: 2rem 0;
   padding: 1.5rem;
   background: var(--card-bg);
   border-radius: 12px;
   border: 1px solid rgba(99, 102, 241, 0.2);
-  display: flex;
-  justify-content: center;
-  align-items: center;
   transition: var(--transition);
 }
 
-.tryhackme-badge:hover {
+.tryhackme-badge-container:hover {
   border-color: var(--primary-color);
   box-shadow: 0 8px 20px rgba(99, 102, 241, 0.15);
 }
 
+.tryhackme-text {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.tryhackme-text i {
+  color: var(--accent);
+  font-size: 1.2rem;
+}
+
+.tryhackme-badge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .tryhackme-badge iframe {
   max-width: 100%;
+  width: 100%;
   min-height: 200px;
+  border: none;
 }
 
 /* ==================== */
