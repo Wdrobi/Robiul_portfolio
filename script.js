@@ -110,7 +110,7 @@ if (skillsSection) {
 // ==================== 
 // Scroll Reveal Animation
 // ====================
-const revealElements = document.querySelectorAll('.skill-card, .project-card, .about-content, .contact-content');
+const revealElements = document.querySelectorAll('.skill-card, .project-card, .about-content, .education-item, .contact-content');
 
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
