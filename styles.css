@@ -441,6 +441,28 @@ body {
   font-weight: 600;
 }
 
+.tryhackme-badge {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: var(--card-bg);
+  border-radius: 12px;
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: var(--transition);
+}
+
+.tryhackme-badge:hover {
+  border-color: var(--primary-color);
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.15);
+}
+
+.tryhackme-badge iframe {
+  max-width: 100%;
+  min-height: 200px;
+}
+
 /* ==================== */
 /* Education Section */
 /* ==================== */
