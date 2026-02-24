@@ -379,6 +379,28 @@ body {
   color: var(--text-primary);
 }
 
+.about-dynamic-role {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+  min-width: 280px;
+}
+
+.about-dynamic-role::after {
+  content: '|';
+  position: absolute;
+  right: -8px;
+  animation: blink 0.7s infinite;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 .about-text p {
   color: var(--text-secondary);
   margin-bottom: 1rem;

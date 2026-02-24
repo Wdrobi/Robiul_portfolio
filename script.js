@@ -41,6 +41,59 @@ if (dynamicRoleElement) {
 }
 
 // ==================== 
+// About Section Dynamic Role Animation
+// ====================
+const aboutRoles = ['Web Developer', 'CTF Player', 'Cybersecurity Enthusiast'];
+let aboutRoleIndex = 0;
+let aboutCharIndex = 0;
+let aboutIsDeleting = false;
+let aboutTypingSpeed = 150;
+
+const aboutDynamicRoleElement = document.querySelector('.about-dynamic-role');
+
+function typeAboutRole() {
+  const currentRole = aboutRoles[aboutRoleIndex];
+  
+  if (aboutIsDeleting) {
+    aboutDynamicRoleElement.textContent = currentRole.substring(0, aboutCharIndex - 1);
+    aboutCharIndex--;
+    aboutTypingSpeed = 75;
+  } else {
+    aboutDynamicRoleElement.textContent = currentRole.substring(0, aboutCharIndex + 1);
+    aboutCharIndex++;
+    aboutTypingSpeed = 150;
+  }
+
+  if (!aboutIsDeleting && aboutCharIndex === currentRole.length) {
+    aboutTypingSpeed = 2000;
+    aboutIsDeleting = true;
+  } else if (aboutIsDeleting && aboutCharIndex === 0) {
+    aboutIsDeleting = false;
+    aboutRoleIndex = (aboutRoleIndex + 1) % aboutRoles.length;
+    aboutTypingSpeed = 500;
+  }
+
+  setTimeout(typeAboutRole, aboutTypingSpeed);
+}
+
+// Start about section typing animation when section is visible
+if (aboutDynamicRoleElement) {
+  const aboutObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        setTimeout(typeAboutRole, 500);
+        aboutObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  
+  const aboutSection = document.querySelector('.about');
+  if (aboutSection) {
+    aboutObserver.observe(aboutSection);
+  }
+}
+
+// ==================== 
 // Mobile Navigation Toggle
 // ====================
 const hamburger = document.querySelector('.hamburger');
