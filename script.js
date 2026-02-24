@@ -1,4 +1,46 @@
 // ==================== 
+// Dynamic Role Animation
+// ====================
+const roles = ['Web Developer', 'CTF Player', 'Cybersecurity Enthusiast'];
+let roleIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+let typingSpeed = 150;
+
+const dynamicRoleElement = document.querySelector('.dynamic-role');
+
+function typeRole() {
+  const currentRole = roles[roleIndex];
+  
+  if (isDeleting) {
+    dynamicRoleElement.textContent = currentRole.substring(0, charIndex - 1);
+    charIndex--;
+    typingSpeed = 75;
+  } else {
+    dynamicRoleElement.textContent = currentRole.substring(0, charIndex + 1);
+    charIndex++;
+    typingSpeed = 150;
+  }
+
+  if (!isDeleting && charIndex === currentRole.length) {
+    // Pause at end of word
+    typingSpeed = 2000;
+    isDeleting = true;
+  } else if (isDeleting && charIndex === 0) {
+    isDeleting = false;
+    roleIndex = (roleIndex + 1) % roles.length;
+    typingSpeed = 500;
+  }
+
+  setTimeout(typeRole, typingSpeed);
+}
+
+// Start typing animation when page loads
+if (dynamicRoleElement) {
+  setTimeout(typeRole, 1000);
+}
+
+// ==================== 
 // Mobile Navigation Toggle
 // ====================
 const hamburger = document.querySelector('.hamburger');

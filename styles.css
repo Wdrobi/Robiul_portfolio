@@ -176,6 +176,41 @@ body {
   font-size: clamp(1.2rem, 3vw, 1.8rem);
   color: var(--text-secondary);
   margin-bottom: 1rem;
+  min-height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.role-prefix {
+  margin-right: 0.3rem;
+}
+
+.dynamic-role {
+  color: var(--accent);
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+  min-width: 280px;
+  text-align: left;
+}
+
+.dynamic-role::after {
+  content: '|';
+  position: absolute;
+  right: -5px;
+  animation: blink 0.7s infinite;
+  color: var(--primary-color);
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
 }
 
 .hero-description {
@@ -366,6 +401,22 @@ body {
 
 .info-item i {
   color: var(--primary-color);
+}
+
+.info-item.achievement {
+  background: rgba(99, 102, 241, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  border: 1px solid rgba(99, 102, 241, 0.3);
+}
+
+.info-item.achievement i {
+  color: var(--accent);
+}
+
+.info-item.achievement span {
+  color: var(--text-primary);
+  font-weight: 600;
 }
 
 /* ==================== */
