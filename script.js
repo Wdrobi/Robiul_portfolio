@@ -177,35 +177,37 @@ window.addEventListener('scroll', () => {
 });
 
 // ==================== 
-// Skill Progress Animation
+// Skills Category Tabs
 // ====================
-const observerOptions = {
-  threshold: 0.5,
-  rootMargin: '0px'
-};
+const skillTabs = document.querySelectorAll('.skills-tab');
+const skillItems = document.querySelectorAll('.skill-item');
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const progressBars = entry.target.querySelectorAll('.skill-progress');
-      progressBars.forEach(bar => {
-        const progress = bar.getAttribute('data-progress');
-        bar.style.width = progress + '%';
-      });
-      observer.unobserve(entry.target);
-    }
+skillTabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    const activeCategory = tab.getAttribute('data-category');
+
+    skillTabs.forEach(item => {
+      item.classList.remove('active');
+      item.setAttribute('aria-selected', 'false');
+    });
+
+    tab.classList.add('active');
+    tab.setAttribute('aria-selected', 'true');
+
+    skillItems.forEach(skill => {
+      if (skill.getAttribute('data-category') === activeCategory) {
+        skill.classList.remove('hidden');
+      } else {
+        skill.classList.add('hidden');
+      }
+    });
   });
-}, observerOptions);
-
-const skillsSection = document.querySelector('.skills');
-if (skillsSection) {
-  observer.observe(skillsSection);
-}
+});
 
 // ==================== 
 // Scroll Reveal Animation
 // ====================
-const revealElements = document.querySelectorAll('.skill-card, .project-card, .about-content, .education-item, .contact-content');
+const revealElements = document.querySelectorAll('.skill-item, .project-card, .about-content, .education-item, .contact-content');
 
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {

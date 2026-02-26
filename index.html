@@ -100,7 +100,10 @@
               <iframe src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=1992157" width="100%" height="auto" title="TryHackMe Badge"></iframe>
             </div>
           </div>
-          <a href="#contact" class="btn btn-primary">Get In Touch</a>
+          <div class="about-buttons">
+            <a href="#contact" class="btn btn-primary">Get In Touch</a>
+            <a href="cv/Robiul_CV.pdf" class="btn btn-secondary" download="Robiul_CV.pdf">Download CV</a>
+          </div>
         </div>
       </div>
     </div>
@@ -141,60 +144,158 @@
   <section id="skills" class="skills">
     <div class="container">
       <h2 class="section-title">Skills & Technologies</h2>
+      <div class="skills-tabs" role="tablist" aria-label="Skill Categories">
+        <button class="skills-tab active" data-category="languages" role="tab" aria-selected="true">Languages</button>
+        <button class="skills-tab" data-category="fronend" role="tab" aria-selected="false">Fronend</button>
+        <button class="skills-tab" data-category="backend" role="tab" aria-selected="false">Backend</button>
+        <button class="skills-tab" data-category="database" role="tab" aria-selected="false">Database</button>
+        <button class="skills-tab" data-category="tools" role="tab" aria-selected="false">Tools</button>
+        <button class="skills-tab" data-category="cybersecurity" role="tab" aria-selected="false">Cybersecurity</button>
+        <button class="skills-tab" data-category="others" role="tab" aria-selected="false">Others</button>
+      </div>
+
       <div class="skills-grid">
-        <div class="skill-card">
-          <div class="skill-icon">
-            <i class="fab fa-html5"></i>
-          </div>
-          <h3>HTML5</h3>
-          <div class="skill-bar">
-            <div class="skill-progress" data-progress="90"></div>
-          </div>
+        <div class="skill-item" data-category="languages">
+          <div class="skill-hex"><i class="fab fa-python"></i></div>
+          <p>Python</p>
         </div>
-        <div class="skill-card">
-          <div class="skill-icon">
-            <i class="fab fa-css3-alt"></i>
-          </div>
-          <h3>CSS3</h3>
-          <div class="skill-bar">
-            <div class="skill-progress" data-progress="85"></div>
-          </div>
+        <div class="skill-item" data-category="languages">
+          <div class="skill-hex"><i class="fab fa-js"></i></div>
+          <p>JavaScript</p>
         </div>
-        <div class="skill-card">
-          <div class="skill-icon">
-            <i class="fab fa-js"></i>
-          </div>
-          <h3>JavaScript</h3>
-          <div class="skill-bar">
-            <div class="skill-progress" data-progress="80"></div>
-          </div>
+        <div class="skill-item" data-category="languages">
+          <div class="skill-hex"><i class="fas fa-code"></i></div>
+          <p>C</p>
         </div>
-        <div class="skill-card">
-          <div class="skill-icon">
-            <i class="fab fa-react"></i>
-          </div>
-          <h3>React</h3>
-          <div class="skill-bar">
-            <div class="skill-progress" data-progress="75"></div>
-          </div>
+        <div class="skill-item" data-category="languages">
+          <div class="skill-hex"><i class="fas fa-code"></i></div>
+          <p>C++</p>
         </div>
-        <div class="skill-card">
-          <div class="skill-icon">
-            <i class="fab fa-node"></i>
-          </div>
-          <h3>Node.js</h3>
-          <div class="skill-bar">
-            <div class="skill-progress" data-progress="70"></div>
-          </div>
+        <div class="skill-item" data-category="languages">
+          <div class="skill-hex"><i class="fab fa-java"></i></div>
+          <p>Java</p>
         </div>
-        <div class="skill-card">
-          <div class="skill-icon">
-            <i class="fab fa-git-alt"></i>
-          </div>
-          <h3>Git</h3>
-          <div class="skill-bar">
-            <div class="skill-progress" data-progress="85"></div>
-          </div>
+        <div class="skill-item" data-category="languages">
+          <div class="skill-hex"><i class="fab fa-php"></i></div>
+          <p>PHP</p>
+        </div>
+        <div class="skill-item" data-category="languages">
+          <div class="skill-hex"><i class="fas fa-terminal"></i></div>
+          <p>Shell</p>
+        </div>
+        <div class="skill-item" data-category="languages">
+          <div class="skill-hex"><i class="fas fa-code"></i></div>
+          <p>TypeScript</p>
+        </div>
+
+        <div class="skill-item hidden" data-category="fronend">
+          <div class="skill-hex"><i class="fab fa-html5"></i></div>
+          <p>HTML5</p>
+        </div>
+        <div class="skill-item hidden" data-category="fronend">
+          <div class="skill-hex"><i class="fab fa-css3-alt"></i></div>
+          <p>CSS3</p>
+        </div>
+        <div class="skill-item hidden" data-category="fronend">
+          <div class="skill-hex"><i class="fab fa-react"></i></div>
+          <p>React</p>
+        </div>
+        <div class="skill-item hidden" data-category="fronend">
+          <div class="skill-hex"><i class="fab fa-bootstrap"></i></div>
+          <p>Bootstrap</p>
+        </div>
+        <div class="skill-item hidden" data-category="fronend">
+          <div class="skill-hex"><i class="fab fa-css3"></i></div>
+          <p>Tailwind CSS</p>
+        </div>
+
+        <div class="skill-item hidden" data-category="backend">
+          <div class="skill-hex"><i class="fab fa-node-js"></i></div>
+          <p>Node.js</p>
+        </div>
+        <div class="skill-item hidden" data-category="backend">
+          <div class="skill-hex"><i class="fas fa-layer-group"></i></div>
+          <p>Express.js</p>
+        </div>
+        <div class="skill-item hidden" data-category="backend">
+          <div class="skill-hex"><i class="fas fa-server"></i></div>
+          <p>REST API</p>
+        </div>
+
+        <div class="skill-item hidden" data-category="database">
+          <div class="skill-hex"><i class="fas fa-database"></i></div>
+          <p>MySQL</p>
+        </div>
+        <div class="skill-item hidden" data-category="database">
+          <div class="skill-hex"><i class="fas fa-leaf"></i></div>
+          <p>MongoDB</p>
+        </div>
+        <div class="skill-item hidden" data-category="database">
+          <div class="skill-hex"><i class="fas fa-table"></i></div>
+          <p>SQL</p>
+        </div>
+        <div class="skill-item hidden" data-category="database">
+          <div class="skill-hex"><i class="fas fa-database"></i></div>
+          <p>SQLite</p>
+        </div>
+
+        <div class="skill-item hidden" data-category="tools">
+          <div class="skill-hex"><i class="fab fa-git-alt"></i></div>
+          <p>Git</p>
+        </div>
+        <div class="skill-item hidden" data-category="tools">
+          <div class="skill-hex"><i class="fab fa-github"></i></div>
+          <p>GitHub</p>
+        </div>
+        <div class="skill-item hidden" data-category="tools">
+          <div class="skill-hex"><i class="fas fa-code"></i></div>
+          <p>VS Code</p>
+        </div>
+
+        <div class="skill-item hidden" data-category="cybersecurity">
+          <div class="skill-hex"><i class="fas fa-user-secret"></i></div>
+          <p>TryHackMe</p>
+        </div>
+        <div class="skill-item hidden" data-category="cybersecurity">
+          <div class="skill-hex"><i class="fas fa-flag"></i></div>
+          <p>CTF</p>
+        </div>
+        <div class="skill-item hidden" data-category="cybersecurity">
+          <div class="skill-hex"><i class="fas fa-shield-alt"></i></div>
+          <p>Penetration Testing</p>
+        </div>
+        <div class="skill-item hidden" data-category="cybersecurity">
+          <div class="skill-hex"><img class="skill-logo" src="https://nmap.org/images/sitelogo.png" alt="Nmap logo"></div>
+          <p>Nmap</p>
+        </div>
+        <div class="skill-item hidden" data-category="cybersecurity">
+          <div class="skill-hex"><img class="skill-logo" src="https://cdn.simpleicons.org/wireshark/1679A7" alt="Wireshark logo"></div>
+          <p>Wireshark</p>
+        </div>
+        <div class="skill-item hidden" data-category="cybersecurity">
+          <div class="skill-hex"><img class="skill-logo" src="https://cdn.simpleicons.org/burpsuite/FF6633" alt="Burp Suite logo"></div>
+          <p>Burp Suite</p>
+        </div>
+        <div class="skill-item hidden" data-category="cybersecurity">
+          <div class="skill-hex"><img class="skill-logo" src="https://icons.duckduckgo.com/ip3/shodan.io.ico" onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;64&quot; height=&quot;64&quot; viewBox=&quot;0 0 64 64&quot;><rect width=&quot;64&quot; height=&quot;64&quot; rx=&quot;12&quot; fill=&quot;%23111d3a&quot;/><path d=&quot;M48 16H20l14 16-14 16h28L34 32z&quot; fill=&quot;%234268ff&quot;/></svg>'" alt="Shodan logo"></div>
+          <p>Shodan</p>
+        </div>
+        <div class="skill-item hidden" data-category="cybersecurity">
+          <div class="skill-hex"><img class="skill-logo" src="https://cdn.simpleicons.org/virustotal/394EFF" alt="VirusTotal logo"></div>
+          <p>VirusTotal</p>
+        </div>
+
+        <div class="skill-item hidden" data-category="others">
+          <div class="skill-hex"><i class="fas fa-network-wired"></i></div>
+          <p>Networking</p>
+        </div>
+        <div class="skill-item hidden" data-category="others">
+          <div class="skill-hex"><i class="fas fa-brain"></i></div>
+          <p>Problem Solving</p>
+        </div>
+        <div class="skill-item hidden" data-category="others">
+          <div class="skill-hex"><i class="fas fa-users"></i></div>
+          <p>Team Collaboration</p>
         </div>
       </div>
     </div>

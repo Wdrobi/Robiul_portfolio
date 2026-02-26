@@ -1,0 +1,52 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1920" y2="1080" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#061325"/>
+      <stop offset="1" stop-color="#040A1A"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="330" y1="170" x2="1590" y2="930" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#22D3EE" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#6366F1" stop-opacity="0.45"/>
+    </linearGradient>
+    <linearGradient id="soft" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#22D3EE" stop-opacity="0.25"/>
+      <stop offset="1" stop-color="#22D3EE" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#bg)"/>
+
+  <g opacity="0.25" stroke="url(#accent)" stroke-width="1.5" fill="none">
+    <path d="M90 880H430L520 790H830L920 700H1220L1310 610H1830"/>
+    <path d="M80 700H360L470 590H780L910 460H1260L1380 340H1820"/>
+    <path d="M110 520H340L470 430H760L920 320H1240L1410 220H1810"/>
+    <circle cx="430" cy="880" r="6" fill="#22D3EE"/>
+    <circle cx="920" cy="700" r="6" fill="#22D3EE"/>
+    <circle cx="1310" cy="610" r="6" fill="#22D3EE"/>
+    <circle cx="470" cy="590" r="6" fill="#6366F1"/>
+    <circle cx="910" cy="460" r="6" fill="#6366F1"/>
+    <circle cx="1380" cy="340" r="6" fill="#6366F1"/>
+  </g>
+
+  <g opacity="0.3" fill="#22D3EE" filter="url(#glow)">
+    <text x="240" y="300" font-size="160" font-family="Segoe UI, Arial, sans-serif">&lt;/&gt;</text>
+    <text x="1480" y="880" font-size="140" font-family="Segoe UI, Arial, sans-serif">{ }</text>
+  </g>
+
+  <g opacity="0.3" transform="translate(1330 180)">
+    <path d="M170 30L300 80V230C300 330 238 420 170 458C102 420 40 330 40 230V80L170 30Z" fill="url(#soft)" stroke="#22D3EE" stroke-width="3"/>
+    <path d="M170 160C145 160 124 181 124 206V252H216V206C216 181 195 160 170 160ZM148 206C148 194 158 184 170 184C182 184 192 194 192 206V227H148V206Z" fill="#22D3EE"/>
+  </g>
+
+  <g opacity="0.14" fill="#8B5CF6">
+    <circle cx="290" cy="170" r="120"/>
+    <circle cx="1600" cy="930" r="170"/>
+  </g>
+</svg>
