@@ -193,7 +193,6 @@ body {
 .dynamic-role {
   color: var(--accent);
   font-weight: 700;
-  position: relative;
   display: inline-block;
   min-width: 280px;
   text-align: left;
@@ -201,8 +200,7 @@ body {
 
 .dynamic-role::after {
   content: '|';
-  position: absolute;
-  right: -5px;
+  margin-left: 2px;
   animation: blink 0.7s infinite;
   color: var(--primary-color);
 }
@@ -388,15 +386,13 @@ body {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   font-weight: 700;
-  position: relative;
   display: inline-block;
   min-width: 280px;
 }
 
 .about-dynamic-role::after {
   content: '|';
-  position: absolute;
-  right: -8px;
+  margin-left: 2px;
   animation: blink 0.7s infinite;
   background: var(--gradient);
   -webkit-background-clip: text;
