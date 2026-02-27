@@ -35,6 +35,16 @@ body {
   overflow-x: hidden;
 }
 
+body.light-mode {
+  --dark-bg: #dbe4ef;
+  --darker-bg: #cbd6e4;
+  --light-bg: #eef3f9;
+  --text-primary: #0b1220;
+  --text-secondary: #1f2a3d;
+  --text-muted: #334155;
+  --card-bg: #e9eff7;
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -58,7 +68,7 @@ body {
 
 .navbar .container {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -74,6 +84,7 @@ body {
   display: flex;
   list-style: none;
   gap: 2rem;
+  margin-left: auto;
 }
 
 .nav-link {
@@ -115,6 +126,35 @@ body {
   background: var(--text-primary);
   margin: 3px 0;
   transition: var(--transition);
+}
+
+.theme-toggle {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid rgba(99, 102, 241, 0.45);
+  background: rgba(99, 102, 241, 0.12);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0.75rem;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-2px);
+  border-color: var(--primary-color);
+  box-shadow: 0 8px 16px rgba(99, 102, 241, 0.2);
+}
+
+body.light-mode .navbar {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+body.light-mode .skills {
+  background: linear-gradient(180deg, rgba(233, 239, 247, 0.95), rgba(203, 214, 228, 0.95));
 }
 
 /* ==================== */
@@ -889,6 +929,11 @@ body {
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
+  }
+
+  .theme-toggle {
+    margin-left: auto;
+    margin-right: 1rem;
   }
 
   .nav-menu {

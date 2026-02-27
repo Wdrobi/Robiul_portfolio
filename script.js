@@ -99,6 +99,31 @@ if (aboutDynamicRoleElement) {
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 const navLinks = document.querySelectorAll('.nav-link');
+const themeToggle = document.getElementById('themeToggle');
+
+const setTheme = (theme) => {
+  document.body.classList.toggle('light-mode', theme === 'light');
+  if (themeToggle) {
+    const icon = themeToggle.querySelector('i');
+    icon.className = theme === 'light' ? 'fas fa-sun' : 'fas fa-moon';
+    themeToggle.setAttribute('aria-label', theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode');
+  }
+  localStorage.setItem('theme', theme);
+};
+
+const storedTheme = localStorage.getItem('theme');
+if (storedTheme === 'light' || storedTheme === 'dark') {
+  setTheme(storedTheme);
+} else {
+  setTheme('dark');
+}
+
+if (themeToggle) {
+  themeToggle.addEventListener('click', () => {
+    const nextTheme = document.body.classList.contains('light-mode') ? 'dark' : 'light';
+    setTheme(nextTheme);
+  });
+}
 
 hamburger.addEventListener('click', () => {
   navMenu.classList.toggle('active');
@@ -292,51 +317,6 @@ if (heroTitle) {
 }
 
 // ==================== 
-// Dark/Light Mode Toggle (Optional)
-// ====================
-// You can add a theme toggle button if desired
-const createThemeToggle = () => {
-  const toggle = document.createElement('button');
-  toggle.className = 'theme-toggle';
-  toggle.innerHTML = '<i class="fas fa-moon"></i>';
-  toggle.style.cssText = `
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: var(--gradient);
-    border: none;
-    color: white;
-    font-size: 1.2rem;
-    cursor: pointer;
-    z-index: 999;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease;
-  `;
-    
-  toggle.addEventListener('click', () => {
-    document.body.classList.toggle('light-mode');
-    const icon = toggle.querySelector('i');
-    icon.className = document.body.classList.contains('light-mode') 
-      ? 'fas fa-sun' 
-      : 'fas fa-moon';
-  });
-    
-  toggle.addEventListener('mouseenter', () => {
-    toggle.style.transform = 'scale(1.1)';
-  });
-    
-  toggle.addEventListener('mouseleave', () => {
-    toggle.style.transform = 'scale(1)';
-  });
-    
-  // Uncomment to add theme toggle button
-  // document.body.appendChild(toggle);
-};
-
-// ==================== 
 // Cursor Trail Effect (Optional)
 // ====================
 const createCursorEffect = () => {
@@ -392,7 +372,6 @@ const createCursorEffect = () => {
 // Initialize Optional Features
 // ====================
 // Uncomment the features you want to enable:
-// createThemeToggle();
 // createCursorEffect();
 
 // ==================== 
