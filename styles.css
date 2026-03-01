@@ -588,6 +588,117 @@ body.light-mode .skills {
 }
 
 /* ==================== */
+/* Certifications Section */
+/* ==================== */
+.certifications {
+  padding: 5rem 0;
+  background: var(--darker-bg);
+}
+
+.certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.certification-group + .certification-group {
+  margin-top: 2.2rem;
+}
+
+.certification-group-title {
+  color: var(--text-primary);
+  font-size: 1.35rem;
+  margin-bottom: 1rem;
+  position: relative;
+  padding-left: 0.8rem;
+}
+
+.certification-group-title::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.2rem;
+  width: 4px;
+  height: 1.1rem;
+  border-radius: 3px;
+  background: var(--gradient);
+}
+
+.certification-item {
+  background: var(--card-bg);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: 14px;
+  padding: 1.4rem;
+  transition: var(--transition);
+}
+
+.certification-item:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary-color);
+  box-shadow: 0 12px 24px rgba(99, 102, 241, 0.16);
+}
+
+.certification-badge {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--accent);
+  background: rgba(34, 211, 238, 0.12);
+  border: 1px solid rgba(34, 211, 238, 0.3);
+  border-radius: 999px;
+  padding: 0.2rem 0.6rem;
+  margin-bottom: 0.7rem;
+}
+
+.certification-item h3 {
+  color: var(--text-primary);
+  margin-bottom: 0.35rem;
+  font-size: 1.08rem;
+}
+
+.certification-meta {
+  color: var(--primary-color);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.certification-details {
+  color: var(--text-secondary);
+}
+
+.certification-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 1rem;
+}
+
+.certification-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  background: rgba(99, 102, 241, 0.12);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: 999px;
+  padding: 0.35rem 0.7rem;
+  transition: var(--transition);
+}
+
+.certification-link:hover {
+  border-color: var(--primary-color);
+  transform: translateY(-1px);
+}
+
+.certification-link.verify {
+  background: rgba(34, 211, 238, 0.12);
+  border-color: rgba(34, 211, 238, 0.35);
+}
+
+/* ==================== */
 /* Skills Section */
 /* ==================== */
 .skills {

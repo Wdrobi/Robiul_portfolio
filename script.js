@@ -232,7 +232,7 @@ skillTabs.forEach(tab => {
 // ==================== 
 // Scroll Reveal Animation
 // ====================
-const revealElements = document.querySelectorAll('.skill-item, .project-card, .about-content, .education-item, .contact-content');
+const revealElements = document.querySelectorAll('.skill-item, .project-card, .about-content, .education-item, .certification-item, .contact-content');
 
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
