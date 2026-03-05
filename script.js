@@ -252,7 +252,34 @@ revealElements.forEach(el => {
 // ==================== 
 // Contact Form Handling
 // ====================
-// Netlify Forms handles submission server-side.
+const contactForm = document.getElementById('contactForm');
+
+if (contactForm) {
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(contactForm);
+    const encodedData = new URLSearchParams(formData).toString();
+
+    try {
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: encodedData
+      });
+
+      if (response.ok) {
+        window.location.href = '/thank-you.html';
+      } else {
+        alert('Message could not be sent. Please try again.');
+      }
+    } catch (error) {
+      alert('Network issue while sending your message. Please try again.');
+    }
+  });
+}
 
 // ==================== 
 // Typing Effect for Hero (Optional)
