@@ -252,48 +252,7 @@ revealElements.forEach(el => {
 // ==================== 
 // Contact Form Handling
 // ====================
-const contactForm = document.getElementById('contactForm');
-
-contactForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-    
-  // Get form values
-  const name = document.getElementById('name').value;
-  const email = document.getElementById('email').value;
-  const subject = document.getElementById('subject').value;
-  const message = document.getElementById('message').value;
-    
-  // For GitHub Pages, you can either:
-  // 1. Use FormSpree (https://formspree.io/)
-  // 2. Use EmailJS (https://www.emailjs.com/)
-  // 3. Use Netlify Forms (if hosting on Netlify)
-  // 4. Or just show a success message
-    
-  // Simple validation
-  if (name && email && subject && message) {
-    // Show success message
-    alert('Thank you for your message! I will get back to you soon.');
-    contactForm.reset();
-        
-    // If you want to use EmailJS, uncomment below and configure:
-    /*
-    emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
-      from_name: name,
-      from_email: email,
-      subject: subject,
-      message: message
-    }).then(
-      function(response) {
-        alert('Message sent successfully!');
-        contactForm.reset();
-      },
-      function(error) {
-        alert('Failed to send message. Please try again.');
-      }
-    );
-    */
-  }
-});
+// Netlify Forms handles submission server-side.
 
 // ==================== 
 // Typing Effect for Hero (Optional)
