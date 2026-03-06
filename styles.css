@@ -997,6 +997,97 @@ body.light-mode .hero .social-links a {
 }
 
 /* ==================== */
+/* Volunteering Section */
+/* ==================== */
+.volunteering {
+  padding: 5rem 0;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(16, 185, 129, 0.12), transparent 40%),
+    radial-gradient(circle at 85% 80%, rgba(34, 211, 238, 0.1), transparent 45%),
+    var(--dark-bg);
+}
+
+.volunteering-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.volunteering-item {
+  background: var(--card-bg);
+  border: 1px solid rgba(16, 185, 129, 0.28);
+  border-radius: 14px;
+  padding: 1.4rem;
+  transition: var(--transition);
+}
+
+.volunteering-item:hover {
+  transform: translateY(-5px);
+  border-color: rgba(16, 185, 129, 0.6);
+  box-shadow: 0 12px 24px rgba(16, 185, 129, 0.14);
+}
+
+.volunteering-badge {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #22c55e;
+  background: rgba(34, 197, 94, 0.12);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  border-radius: 999px;
+  padding: 0.2rem 0.6rem;
+  margin-bottom: 0.7rem;
+}
+
+.volunteering-item h3 {
+  color: var(--text-primary);
+  margin-bottom: 0.35rem;
+  font-size: 1.08rem;
+}
+
+.volunteering-meta {
+  color: #22c55e;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.volunteering-details {
+  color: var(--text-secondary);
+}
+
+.volunteering-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 1rem;
+}
+
+.volunteering-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  border-radius: 999px;
+  padding: 0.35rem 0.7rem;
+  transition: var(--transition);
+}
+
+.volunteering-link:hover {
+  border-color: #10b981;
+  transform: translateY(-1px);
+}
+
+.volunteering-link.verify {
+  background: rgba(34, 211, 238, 0.12);
+  border-color: rgba(34, 211, 238, 0.35);
+}
+
+/* ==================== */
 /* Skills Section */
 /* ==================== */
 .skills {
