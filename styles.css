@@ -70,12 +70,14 @@ body.light-mode {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  gap: 1rem;
 }
 
 .logo {
   display: flex;
   align-items: center;
   gap: 0.7rem;
+  flex-shrink: 0;
 }
 
 .logo-avatar {
@@ -92,15 +94,17 @@ body.light-mode {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  font-size: 1.5rem;
+  font-size: clamp(1.2rem, 1.7vw, 1.5rem);
   margin: 0;
+  white-space: nowrap;
 }
 
 .nav-menu {
   display: flex;
   list-style: none;
-  gap: 2rem;
+  gap: clamp(0.75rem, 1.25vw, 2rem);
   margin-left: auto;
+  flex-wrap: nowrap;
 }
 
 .nav-link {
@@ -109,6 +113,10 @@ body.light-mode {
   font-weight: 500;
   transition: var(--transition);
   position: relative;
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  font-size: 0.98rem;
 }
 
 .nav-link::after {
@@ -157,6 +165,7 @@ body.light-mode {
   align-items: center;
   justify-content: center;
   margin-left: 0.75rem;
+  flex-shrink: 0;
 }
 
 .theme-toggle:hover {
@@ -1426,6 +1435,20 @@ body.light-mode .hero .social-links a {
 /* ==================== */
 /* Responsive Design */
 /* ==================== */
+@media (max-width: 1200px) and (min-width: 769px) {
+  .logo h2 {
+    font-size: 1.25rem;
+  }
+
+  .nav-menu {
+    gap: 0.85rem;
+  }
+
+  .nav-link {
+    font-size: 0.92rem;
+  }
+}
+
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
